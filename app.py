@@ -14,3 +14,21 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/validate_password', methods=['POST'])
+def validate_password():
+    password = request.form['password']
+    correct_password = 'yourSecurePassword'  # Your actual password
+
+    if password == correct_password:
+        return redirect(url_for('main_content'))
+    else:
+        return render_template('index.html', error="Incorrect password, try again.")
+
+@app.route('/main')
+def main_content():
+    return render_template('main_content.html')  # Your main content page
+
