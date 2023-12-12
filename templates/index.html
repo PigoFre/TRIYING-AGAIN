@@ -149,18 +149,7 @@
     {% endif %}
 </form>
 
-    <div class="password-container" id="password-screen">
-    <h2>Enter the Magic Number to Continue</h2>
-    <form action="/validate_password" method="post">
-        <input type="password" name="password" placeholder="Enter Password">
-        <input type="submit" value="Unlock">
-        {% if error %}
-            <div id="error-message">{{ error }}</div>
-        {% endif %}
-    </form>
-</div>
-
-
+   
     <div id="main-content" class="hidden">
         <h1>THE BLOCK WIZARD</h1>
         <h2>By Donovan Aggeler</h2>
