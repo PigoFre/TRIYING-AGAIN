@@ -22,7 +22,7 @@ def index():
 @app.route('/validate_password', methods=['POST'])
 def validate_password():
     password = request.form['password']
-    correct_password = 'yourSecurePassword'  # Your actual password
+    correct_password = '15399'  # Your actual password
 
     if password == correct_password:
         return redirect(url_for('main_content'))
@@ -31,5 +31,5 @@ def validate_password():
 
 @app.route('/main')
 def main_content():
-    return render_template('main_content.html')  # Your main content page
+    return render_template('index.html')  # Your main content page
 
