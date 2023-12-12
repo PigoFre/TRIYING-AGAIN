@@ -90,6 +90,23 @@ def print_messages_from_thread(thread_id):
         if msg.role == "assistant":
             response += msg.content[0].text.value + "\n"
     return response.strip()
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/validate_password', methods=['POST'])
+def validate_password():
+    password = request.form['password']
+    correct_password = 'yourSecurePassword'  # Your actual password
+
+    if password == correct_password:
+        return redirect(url_for('main_content'))
+    else:
+        return render_template('index.html', error="Incorrect password, try again.")
+
+@app.route('/main')
+def main_content():
+    return render_template('index.html')  # Your main content page
 
 # Main function to process user input
 def process_user_input(user_input):
