@@ -23,7 +23,41 @@
         }
 
       
+    .password-container {
+    background-color: white; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust width as needed */
+    margin: auto; /* Center the container */
+    margin-top: 50px; /* Adjust top margin as needed */
+    }
+    .password-container input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    .password-container input[type="submit"] {
+    width: 85%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    cursor: pointer;
+    }    
+    .password-container input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 
+/* Error Message Styles */
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
      
 
         
@@ -116,13 +150,16 @@
 </form>
 
     <div class="password-container" id="password-screen">
-        <h2>Enter the Magic Number to Continue</h2>
-        <form id="password-form">
-            <input type="password" id="password-input" placeholder="Enter Password">
-            <input type="submit" value="Unlock">
-        </form>
-        <div id="error-message"></div>
-    </div>
+    <h2>Enter the Magic Number to Continue</h2>
+    <form action="/validate_password" method="post">
+        <input type="password" name="password" placeholder="Enter Password">
+        <input type="submit" value="Unlock">
+        {% if error %}
+            <div id="error-message">{{ error }}</div>
+        {% endif %}
+    </form>
+</div>
+
 
     <div id="main-content" class="hidden">
         <h1>THE BLOCK WIZARD</h1>
