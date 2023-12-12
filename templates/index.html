@@ -142,6 +142,16 @@
 <body>
     <div class="password-container" id="password-screen">
         <h2>Enter the Magic Number to Continue</h2>
+        <form action="/validate_password" method="post">
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" value="Unlock">
+            {% if error %}
+                <div id="error-message">{{ error }}</div>
+            {% endif %}
+        </form>
+    </div>
+    <div class="password-container" id="password-screen">
+        <h2>Enter the Magic Number to Continue</h2>
         <form id="password-form">
             <input type="password" id="password-input" placeholder="Enter Password">
             <input type="submit" value="Unlock">
@@ -169,20 +179,7 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('password-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var password = document.getElementById('password-input').value;
-            if (password ===  <p>{{ password }}</p>) {
-                document.getElementById('password-screen').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-                document.getElementById('back').style.display = ' ';
-                
-            } else {
-                document.getElementById('error-message').textContent = 'Incorrect password, try again.';
-            }
-        });
-    </script>
+   
     <script>
         // Auto-scroll to the latest message
         var chatBox = document.getElementById("chat-box");
