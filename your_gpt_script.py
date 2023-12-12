@@ -90,11 +90,11 @@ def print_messages_from_thread(thread_id):
         if msg.role == "assistant":
             response += msg.content[0].text.value + "\n"
     return response.strip()
-@app.route('/')
+@your_gpt_script.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/validate_password', methods=['POST'])
+@your_gpt_script.route('/validate_password', methods=['POST'])
 def validate_password():
     password = request.form['password']
     correct_password = 'yourSecurePassword'  # Your actual password
@@ -104,7 +104,7 @@ def validate_password():
     else:
         return render_template('index.html', error="Incorrect password, try again.")
 
-@app.route('/main')
+@your_gpt_script.route('/main')
 def main_content():
     return render_template('index.html')  # Your main content page
 
