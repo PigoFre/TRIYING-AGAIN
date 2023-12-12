@@ -140,16 +140,14 @@
     </style>
 </head>
 <body>
-    <div class="password-container" id="password-screen">
-        <h2>Enter the Magic Number to Continue</h2>
-        <form action="/validate_password" method="post">
-            <input type="password" name="password" placeholder="Enter Password">
-            <input type="submit" value="Unlock">
-            {% if error %}
-                <div id="error-message">{{ error }}</div>
-            {% endif %}
-        </form>
-    </div>
+    <form action="/validate_password" method="post">
+    <input type="password" name="password" placeholder="Enter Password">
+    <input type="submit" value="Unlock">
+    {% if error %}
+        <div id="error-message">{{ error }}</div>
+    {% endif %}
+</form>
+
     <div class="password-container" id="password-screen">
         <h2>Enter the Magic Number to Continue</h2>
         <form id="password-form">
