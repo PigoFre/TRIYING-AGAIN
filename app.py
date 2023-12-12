@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from flask import Flask, request, jsonify 
 from your_gpt_script import process_user_input  # Import the function from your GPT script
 from tavily import TavilyClient
-application = Flask(__name__)
+app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def home():
