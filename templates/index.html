@@ -159,7 +159,10 @@
     </div>
 {% endif %}
    
-    <div>
+   
+    {% if authenticated %}
+    <div id="main-content">
+         <div>
         <h1>THE BLOCK WIZARD</h1>
         <h2>By Donovan Aggeler</h2>
         <div class="container">
@@ -198,10 +201,6 @@
             }, 10000); // 10 seconds timeout
         });
     </script>
-    {% if authenticated %}
-    <div id="main-content">
-        <!-- Your main content goes here -->
-        <!-- User Input Form -->
         <form action="/" method="post">
             <input type="text" name="user_input" placeholder="Type your message...">
             <input type="submit" value="Send">
