@@ -5,7 +5,7 @@ import openai
 from tavily import TavilyClient
 
 # Initialize OpenAI and Tavily clients with API keys
-openai_api_key = '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'
+openai_api_key = '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'
 # Your Tavily API key
 tavily_api_key = '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'
 openai_client = openai.Client(api_key=openai_api_key)
