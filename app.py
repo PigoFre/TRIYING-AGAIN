@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask import Flask, request, jsonify 
+from flask import Flask, render_template, request, redirect, url_for
 from your_gpt_script import process_user_input  # Import the function from your GPT script
 from tavily import TavilyClient
 app = Flask(__name__)
