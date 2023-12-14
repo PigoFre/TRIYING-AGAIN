@@ -27,7 +27,7 @@
             color: black;
         }
 
-      
+    
     .password-container {
     background-color: white; /* White background */
     padding: 20px;
@@ -148,16 +148,28 @@
 </head>
 <body>
     {% if not authenticated %}
-    <div class="password-container" id="password-screen">
-        <h2>Enter the Magic Number to Continue</h2>
-        <form action="/" method="post">
-            <input type="password" name="password" placeholder="Enter Password">
-            <input type="submit" value="Unlock">
-            {% if error %}
-                <div id="error-message">{{ error }}</div>
-            {% endif %}
-        </form>
+
+
+    <button id="registerBtn">Register</button>
+
+    <div id="registerForm" style="display:none;">
+    <form action="register.php" method="post">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="submit" value="Register">
+    </form>
     </div>
+    <script>
+    document.getElementById('registerBtn').addEventListener('click', function() {
+        var form = document.getElementById('registerForm');
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    });
+</script>
 {% endif %}
    
    
