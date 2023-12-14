@@ -151,7 +151,7 @@
 
 
     <button id="registerBtn">Register</button>
-
+    <button id="loginBtn">Login</button>
     <div id="registerForm" style="display:none;">
     <form action="register.php" method="post">
         <input type="text" name="username" placeholder="Username" required><br>
@@ -160,11 +160,15 @@
         <input type="submit" value="Register">
     </form>
     </div>
+    <div id="loginForm" style="display:none;">
+    
     <form action="login.php" method="post">
     <input type="text" name="username" placeholder="Username" required>
     <input type="password" name="password" placeholder="Password" required>
     <input type="submit" value="Login">
     </form>
+    </div>
+    
     <script>
     document.getElementById('registerBtn').addEventListener('click', function() {
         var form = document.getElementById('registerForm');
@@ -175,6 +179,17 @@
         }
     });
 </script>
+    <script>
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        var form = document.getElementById('loginForm');
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    });
+</script>
+    
 {% endif %}
    
    
